@@ -13,7 +13,7 @@ What you need to do:
      exact filename, with a header row and columns named exactly
      eps, error1, error2, error3.
 """
-
+import math
 import numpy as np
 
 
@@ -48,6 +48,13 @@ def gram_schmidt_qr(A):
     R = np.zeros_like(A)
 
     # TODO: fill in Q and R
+    columns = []
+    for j in range(A.shape[1]):
+        columns.append(A[:,j])
+    print(columns)
+    
+
+
 
     return Q, R
 
@@ -71,4 +78,6 @@ def generate_table():
 
 
 if __name__ == "__main__":
+    A = np.array([[2,1],[4,2]])
+    gram_schmidt_qr(A)
     generate_table()
